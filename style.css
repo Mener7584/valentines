@@ -1,0 +1,162 @@
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: #000;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0 auto;
+    max-width: 90rem;
+}
+
+[class*="__container"] {
+    margin: 0 auto;
+    padding-inline: 0.625rem;
+    max-width: 81.25rem;
+}
+
+.wrapper > main {
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+svg {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+    user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: transparent;
+    color: inherit;
+}
+
+button,
+input[type="button"],
+input[type="checkbox"],
+input[type="reset"] {
+    cursor: pointer;
+}
+
+button:disabled,
+input:disabled {
+    cursor: default;
+}
+
+.hero {
+    background-color: #ffeae3;
+}
+
+.hero__container {
+    position: relative;
+    height: min(100svh, 56.25rem);
+    padding: 1.25rem 0;
+    display: flex;
+}
+.hero__container::before,
+.hero__container::after {
+    content: "";
+    position: absolute;
+    background: url("./valentinka1.png") bottom left/25% no-repeat;
+    inset: 0 0 34% 0;
+    transform: translateY(34%);
+    z-index: 1;
+}
+
+.hero__container::after {
+    transform: translateY(34%) scaleX(-1);
+}
+
+@media (max-width: 700px) {
+    .hero__container::before,
+    .hero__container::after {
+        background: url("./valentinka1.png") bottom left/35% no-repeat;
+        bottom: 40%;
+        transform: translateY(40%);
+    }
+
+    .hero__container::after {
+        transform: translateY(40%) scaleX(-1);
+    }
+
+    .hero__container {
+        height: min(100dvh, 50rem);
+    }
+}
+
+.hero__title {
+    color: #ce0223;
+    margin: auto;
+    font-size: 1.375rem;
+    z-index: 2;
+    text-align: center;
+    user-select: none;
+    text-shadow:
+        0.125rem 0 #ffeae3,
+        -0.125rem 0 #ffeae3,
+        0 0.125rem #ffeae3,
+        0 -0.125rem #ffeae3,
+        0.0625rem 0.0625rem #ffeae3,
+        -0.0625rem -0.0625rem #ffeae3,
+        0.0625rem -0.0625rem #ffeae3,
+        -0.0625rem 0.0625rem #ffeae3;
+    font-weight: 700;
+}
+
+.hero__title:hover {
+    text-decoration: underline;
+}
+
+.ohno__container {
+    background-color: #000;
+    padding-block: 1.25rem;
+    height: min(100dvh, 56.25rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ohno__image {
+    max-height: 100%;
+}
