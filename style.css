@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./Inter-Bold.woff2") format(woff2);
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 *,
 :before,
 :after {
@@ -97,11 +105,18 @@ input:disabled {
 .hero__container::before,
 .hero__container::after {
     content: "";
+    opacity: 0;
+    transition: opacity 0.6s 0.3s;
     position: absolute;
-    background: url("./valentinka1.png") bottom left/25% no-repeat;
+    background: url("./valentinka1.avif") bottom left/25% no-repeat;
     inset: 0 0 34% 0;
     transform: translateY(34%);
     z-index: 1;
+}
+
+.hero__container.inViewport::before,
+.hero__container.inViewport::after {
+    opacity: 1;
 }
 
 .hero__container::after {
@@ -130,7 +145,12 @@ input:disabled {
     margin: auto;
     font-size: 1.375rem;
     z-index: 2;
+    opacity: 0;
+    transform: translateY(0.625rem);
     text-align: center;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
     user-select: none;
     text-shadow:
         0.125rem 0 #ffeae3,
@@ -142,6 +162,11 @@ input:disabled {
         0.0625rem -0.0625rem #ffeae3,
         -0.0625rem 0.0625rem #ffeae3;
     font-weight: 700;
+}
+
+.hero__title.inViewport {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero__title:hover {
