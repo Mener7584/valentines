@@ -126,7 +126,7 @@ input:disabled {
 @media (max-width: 700px) {
     .hero__container::before,
     .hero__container::after {
-        background: url("./valentinka1.png") bottom left/35% no-repeat;
+        background: url("./valentinka1.avif") bottom left/35% no-repeat;
         bottom: 40%;
         transform: translateY(40%);
     }
